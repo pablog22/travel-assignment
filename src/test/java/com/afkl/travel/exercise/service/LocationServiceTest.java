@@ -1,10 +1,13 @@
 package com.afkl.travel.exercise.service;
 
 import com.afkl.travel.exercise.dto.LocationDto;
+import com.afkl.travel.exercise.exception.LocationNotFoundException;
 import com.afkl.travel.exercise.model.Location;
 import com.afkl.travel.exercise.model.Translation;
 import com.afkl.travel.exercise.repository.LocationRepository;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +51,9 @@ public class LocationServiceTest {
 
     private static final Double CITY_LONGITUDE = 4.78417d;
     private static final Double CITY_LATITUDE = 52.31667d;
+
+    @Rule
+    public ExpectedException expectedException = ExpectedException.none();
 
     @Autowired
     private LocationService locationService;
@@ -117,6 +123,16 @@ public class LocationServiceTest {
 
         assertNull(locationDto.getParentCode());
         assertNull(locationDto.getParentType());
+    }
+
+    @Test
+    public void whenGetLocationByCountryAndNotCountryFound_thenThrowsException() {
+        expectedException.expect(LocationNotFoundException.class);
+
+        Mockito.when(locationRepository.findByTypeAndCode(anyString(), anyString())).thenReturn(Optional.empty());
+
+        locationService.getLocationByTypeAndCode(TYPE_COUNTRY, COUNTRY_CODE_NL, LANGUAGE_EN);
+
     }
 
     @Test
