@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "b121c8ce-8fd2-4390-973c-ca04dd928b8f",
+		"name": "Travel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/travel/locations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travel}}/travel/locations",
+					"host": [
+						"{{travel}}"
+					],
+					"path": [
+						"travel",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/travel/locations country NL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travel}}/travel/locations/country/NL",
+					"host": [
+						"{{travel}}"
+					],
+					"path": [
+						"travel",
+						"locations",
+						"country",
+						"NL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/travel/locations country NL (NL lang)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept-language",
+						"value": "NL",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{travel}}/travel/locations/country/NL",
+					"host": [
+						"{{travel}}"
+					],
+					"path": [
+						"travel",
+						"locations",
+						"country",
+						"NL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/travel/locations country NL (XX lang)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept-language",
+						"type": "text",
+						"value": "XX"
+					}
+				],
+				"url": {
+					"raw": "{{travel}}/travel/locations/country/NL",
+					"host": [
+						"{{travel}}"
+					],
+					"path": [
+						"travel",
+						"locations",
+						"country",
+						"NL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/travel/locations city AMS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travel}}/travel/locations/city/AMS",
+					"host": [
+						"{{travel}}"
+					],
+					"path": [
+						"travel",
+						"locations",
+						"city",
+						"AMS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/travel/locations country XX",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travel}}/travel/locations/country/XX",
+					"host": [
+						"{{travel}}"
+					],
+					"path": [
+						"travel",
+						"locations",
+						"country",
+						"XX"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actuator metrics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{travel}}/actuator/metrics",
+					"host": [
+						"{{travel}}"
+					],
+					"path": [
+						"actuator",
+						"metrics"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "psw",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "someuser",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b0bdfef8-21ca-4065-8ba4-cfd9de0cbca2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "43ab916a-b09f-46f9-b327-4f7e06abf688",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
