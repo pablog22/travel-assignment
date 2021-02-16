@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("travel")
 public class TravelController {
 
     private static final Logger log = LoggerFactory.getLogger(TravelController.class);
@@ -24,7 +23,7 @@ public class TravelController {
         this.locationService = locationService;
     }
 
-    @GetMapping("/locations")
+    @GetMapping("${afkl.travel.url}")
     public List<LocationDto> getLocations(
             @RequestHeader(value = "accept-language", defaultValue = "EN") String language
     ) {
@@ -32,7 +31,7 @@ public class TravelController {
         return locationService.getLocations(language);
     }
 
-    @GetMapping("/locations/{type}/{code}")
+    @GetMapping("${afkl.travel.url}/{type}/{code}")
     public LocationDto getLocation(
             @PathVariable String type,
             @PathVariable String code,
