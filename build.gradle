@@ -30,6 +30,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-devtools'
     
     testCompile 'junit:junit:4.12'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
 
 task runSwaggerUI(type: Exec) {
