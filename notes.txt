@@ -1,0 +1,12 @@
+Notes:
+
+I'm using Zulu KDL 15, but compiling with level 12 as it was in the file build.gradle
+sourceCompatibility = 12
+targetCompatibility = 12
+
+
+I had to modify the file
+  gradle/wrapper/gradle-wrapper.properties
+and set 'gradle-6.4.1-all.zip' instead of 'gradle-5.3.1-bin.zip'
+because it didn't work.
+
